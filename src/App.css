@@ -43,12 +43,15 @@
     justify-content: center;
     z-index: 99;
 }
-/* .menuSensor{
-  position: relative;
+.menuSensor{
+  position: absolute;
+  top:0;
+  left:0;
   width:100%;
   height:100%;
-  background-color: red;
-} */
+  background-color: black;
+  z-index: -1;
+}
 .navLink {
     cursor: pointer;
     font-size: 1.5em;
@@ -58,6 +61,7 @@
     font-family: "Livvic";
     letter-spacing: 0.15em;
     text-align: center;
+    z-index: 10;
 }
 .show {
     top: 0;
@@ -196,7 +200,6 @@
   width:100%;
   height:60vh;
   position: relative;
-  background-color: red;
   display:flex;
   align-items: center;
   justify-content: center;

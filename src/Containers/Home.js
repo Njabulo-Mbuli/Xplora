@@ -2,6 +2,9 @@ import React from "react";
 import poster from '../assets/images/sunrise.jpg';
 
 class Home extends React.Component {
+    goToNasaApi=()=>{
+        window.open('https://api.nasa.gov/api.html','_blank');
+    }
     render() {
         return <div className='Home'>
             <div className="poster">
@@ -22,7 +25,7 @@ class Home extends React.Component {
                     to the public. The API's are available on their website and you can take a 
                     look and maybe find something I didn't ;).
                 </p>
-                <button className="websiteButton">NASA APIs</button>
+                <button className="websiteButton" onClick={()=>{this.goToNasaApi()}}>NASA APIs</button>
             </section>
         </div>;
     }
