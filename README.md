@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+If you would like to view the Project click this link: [Xplora](http://xplora.njabulombuli.co.za)
 
 ## Available Scripts
 
