@@ -17,8 +17,11 @@ class App extends React.Component {
                     <Switch>
                         <Route path='/' exact component={Home} />
                         <Route path='/PictureOfTheDay' component={PictureDay} />
-                        <Route path="/Gallery" component={Gallery}/>
-                        <Route path="/WeatherOnMars" component={WeatherOnMars}/>
+                        <Route path='/Gallery' component={Gallery} />
+                        <Route
+                            path='/WeatherOnMars'
+                            component={WeatherOnMars}
+                        />
                     </Switch>
                 </Layout>
             </BrowserRouter>

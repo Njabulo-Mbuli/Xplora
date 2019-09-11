@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 
-class WeatherOnMars extends React.Component{
-    render(){
-        return(
-            <div>
-                Weather on Mars
-            </div>
-        );
+class WeatherOnMars extends React.Component {
+    render() {
+        return <div>Weather on Mars</div>;
     }
 }
 

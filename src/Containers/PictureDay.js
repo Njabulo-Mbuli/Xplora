@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 
-class PictureDay extends React.Component{
-    render(){
-        return(
-            <div>
-                Picture of the day
-            </div>
-        );
+class PictureDay extends React.Component {
+    render() {
+        return <div>Picture of the day</div>;
     }
 }
 

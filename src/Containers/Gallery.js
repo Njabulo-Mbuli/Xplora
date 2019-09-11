@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 
-class Gallery extends React.Component{
-    render(){
-        return(
-            <div>
-                Gallery
-            </div>
-        );
+class Gallery extends React.Component {
+    render() {
+        return <div>Gallery</div>;
     }
 }
 
