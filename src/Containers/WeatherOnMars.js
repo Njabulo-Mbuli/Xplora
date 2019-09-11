@@ -1,13 +1,13 @@
 import React from 'react';
 
-class PictureDay extends React.Component{
+class WeatherOnMars extends React.Component{
     render(){
         return(
             <div>
-                Picture of the day
+                Weather on Mars
             </div>
         );
     }
 }
 
-export default PictureDay;
+export default WeatherOnMars;

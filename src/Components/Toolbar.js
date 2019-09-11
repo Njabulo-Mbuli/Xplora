@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter, Link } from "react-router-dom";
 
 class Toolbar extends React.Component {
     hamburgerClicked = () => {
@@ -13,7 +14,9 @@ class Toolbar extends React.Component {
         return (
             <React.Fragment>
                 <div className='Toolbar'>
-                    <h4 className='websiteTitle'>XPLORA</h4>
+                    <Link to='/' className='websiteTitle'>
+                        XPLORA
+                    </Link>
                     <div
                         className='hamburger hamburger--boring'
                         id='hamburger'
@@ -25,43 +28,47 @@ class Toolbar extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div
-                    className='menuItems'
-                    id='menuItems'>
-                    <div className="menuSensor" onClick={() => {
-                        this.hamburgerClicked();
-                    }}></div>
-                    <h4
+                <div className='menuItems' id='menuItems'>
+                    <div
+                        className='menuSensor'
+                        onClick={() => {
+                            this.hamburgerClicked();
+                        }}></div>
+                    <Link
+                        to='/'
                         className='navLink'
                         onClick={() => {
                             this.hamburgerClicked();
                         }}>
                         Home
-                    </h4>
-                    <h4
+                    </Link>
+                    <Link
+                        to='/Gallery'
                         className='navLink'
                         onClick={() => {
                             this.hamburgerClicked();
                         }}>
                         Gallery
-                    </h4>
-                    <h4
+                    </Link>
+                    <Link
+                        to='/PictureOfTheDay'
                         className='navLink'
                         onClick={() => {
                             this.hamburgerClicked();
                         }}>
                         Picture of the Day
-                    </h4>
-                    <h4
+                    </Link>
+                    <Link
+                        to='/WeatherOnMars'
                         className='navLink'
                         onClick={() => {
                             this.hamburgerClicked();
                         }}>
                         Weather on Mars
-                    </h4>
+                    </Link>
                 </div>
             </React.Fragment>
         );
     }
 }
-export default Toolbar;
+export default withRouter(Toolbar);

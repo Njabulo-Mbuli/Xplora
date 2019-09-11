@@ -1,13 +1,13 @@
 import React from 'react';
 
-class PictureDay extends React.Component{
+class Gallery extends React.Component{
     render(){
         return(
             <div>
-                Picture of the day
+                Gallery
             </div>
         );
     }
 }
 
-export default PictureDay;
+export default Gallery;
