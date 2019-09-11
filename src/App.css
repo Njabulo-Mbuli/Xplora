@@ -43,6 +43,12 @@
     justify-content: center;
     z-index: 99;
 }
+/* .menuSensor{
+  position: relative;
+  width:100%;
+  height:100%;
+  background-color: red;
+} */
 .navLink {
     cursor: pointer;
     font-size: 1.5em;
@@ -161,11 +167,71 @@
 
 .Home {
     width: 100%;
-    height: 120vh;
-    background-color: #0e323a;
-    color: white;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: black;
+}
+.about{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  flex-flow: column;
+}
+.websiteButton{
+  border:4px solid black;
+  margin: 1em auto;
+  background-color: rgba(0, 0, 0, 0);
+  color:black;
+  font-family: 'Livvic',sans-serif;
+  font-size: 1.4em;
+  padding:0.5em 0.8em;
+  transition:0.5s ease-in-out;
+}
+.websiteButton:hover{
+  background-color:black;
+  color:white;
 }
 
+.poster{
+  width:100%;
+  height:60vh;
+  position: relative;
+  background-color: red;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+.posterImage{
+  object-fit: cover;
+  width:100%;
+  height:100%;
+}
+.posterTagline{
+  color:white;
+  position: absolute;
+  font-family: 'Livvic',sans-serif;
+}
+p{
+  letter-spacing: 0.15em;
+  width:50%;
+  padding: 2em 0em;
+}
+p:nth-child(odd){
+  position: relative;
+  left:20%;
+}
+p:nth-child(even){
+  position: relative;
+  left:40%;
+}
 @media (max-width: 500px) {
     .Toolbar {
         display: grid;

@@ -27,10 +27,10 @@ class Toolbar extends React.Component {
                 </div>
                 <div
                     className='menuItems'
-                    id='menuItems'
-                    onClick={() => {
+                    id='menuItems'>
+                    <div className="menuSensor" onClick={() => {
                         this.hamburgerClicked();
-                    }}>
+                    }}></div>
                     <h4
                         className='navLink'
                         onClick={() => {
@@ -64,5 +64,4 @@ class Toolbar extends React.Component {
         );
     }
 }
-
 export default Toolbar;
