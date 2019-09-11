@@ -26,6 +26,7 @@
 }
 .buffer {
     height: 7.8vh;
+    min-heigh:48px;
     background-color: black;
 }
 .menuItems {
