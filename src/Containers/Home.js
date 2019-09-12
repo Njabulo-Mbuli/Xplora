@@ -21,7 +21,7 @@ class Home extends React.Component {
                     </p>
                     <p>
                         With the use of the NASA API's, we can take a look at
-                        the weather on Mars and a trove of pictures that where
+                        the weather on Mars and a trove of pictures that were
                         taken by the Mars Rovers and satellites.
                     </p>
                     <p>
