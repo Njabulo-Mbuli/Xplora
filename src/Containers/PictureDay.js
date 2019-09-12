@@ -8,7 +8,7 @@ class PictureDay extends React.Component {
         hdurl: null,
         explanation: null
     };
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         fetch("https://api.nasa.gov/planetary/apod?api_key=7iCr77AbwYexDHksHxvcl8RgawbNnpeX2JUv9NcL")
             .then(result => {
                 return result.json();

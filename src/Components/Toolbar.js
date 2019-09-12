@@ -58,22 +58,6 @@ class Toolbar extends React.Component {
                         }}>
                         Picture of the Day
                     </Link>
-                    <Link
-                        to='/WeatherOnMars'
-                        className='navLink'
-                        onClick={() => {
-                            this.hamburgerClicked();
-                        }}>
-                        Weather on Mars
-                    </Link>
-                    <Link
-                        to="/NewsOfTheDay"
-                        className="navLink"
-                        onClick={()=>{
-                            this.hamburgerClicked();
-                        }}>
-                        News of the Day
-                    </Link>
                 </div>
             </React.Fragment>
         );
