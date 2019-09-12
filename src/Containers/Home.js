@@ -10,7 +10,7 @@ class Home extends React.Component {
         return (
             <div className='Home'>
                 <div className='poster'>
-                    <img className='posterImage' src={poster} />
+                    <img className='posterImage' src={poster} alt="Poster"/>
                     <div className='overlay'></div>
                     <h3 className='posterTagline'>Explore the universe...</h3>
                 </div>
@@ -20,7 +20,6 @@ class Home extends React.Component {
                         showcasing the valuable data that NASA has to offer.
                     </p>
                     <p>
-                        {" "}
                         With the use of the NASA API's, we can take a look at
                         the weather on Mars and a trove of pictures that where
                         taken by the Mars Rovers and satellites.
