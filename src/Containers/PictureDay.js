@@ -9,7 +9,7 @@ class PictureDay extends React.Component {
         explanation: null
     };
     componentWillMount() {
-        fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+        fetch("https://api.nasa.gov/planetary/apod?api_key=7iCr77AbwYexDHksHxvcl8RgawbNnpeX2JUv9NcL")
             .then(result => {
                 return result.json();
             })
