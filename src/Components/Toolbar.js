@@ -66,6 +66,14 @@ class Toolbar extends React.Component {
                         }}>
                         Weather on Mars
                     </Link>
+                    <Link
+                        to="/NewsOfTheDay"
+                        className="navLink"
+                        onClick={()=>{
+                            this.hamburgerClicked();
+                        }}>
+                        News of the Day
+                    </Link>
                 </div>
             </React.Fragment>
         );
