@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
 
-class NewsOfTheDay extends React.Component{
-    render(){
-        return(
-            <div>
-                News of the day
-            </div>
-        );
+class NewsOfTheDay extends React.Component {
+    render() {
+        return <div>News of the day</div>;
     }
 }
 

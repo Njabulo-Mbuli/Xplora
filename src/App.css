@@ -226,18 +226,50 @@
     position: absolute;
     font-family: "Livvic", sans-serif;
 }
-p {
+.about p {
     letter-spacing: 0.15em;
     width: 50%;
     padding: 2em 0em;
 }
-p:nth-child(odd) {
+.about p:nth-child(odd) {
     position: relative;
     left: 20%;
 }
-p:nth-child(even) {
+.about p:nth-child(even) {
     position: relative;
     left: 40%;
+}
+.podTitle{
+    margin:0.5em auto;
+    width:80%;
+    text-align: center;
+}
+.podSubTitle{
+    width:70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row;
+    margin:0 auto;
+}
+.podBigContainer{
+    width:100%;
+    min-height: 100%;
+}
+.podContainer{
+    width:90%;
+    height:70vh;
+    margin:2em auto;
+}
+.podPicture{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.podExplanation{
+    width:90%;
+    margin:0.4em auto;
+    text-justify: center;
 }
 @media (max-width: 500px) {
     .Toolbar {
