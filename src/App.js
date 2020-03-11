@@ -6,6 +6,7 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import PictureDay from "./Containers/PictureDay";
 import SpaceXLaunches from "./Containers/SpaceXLaunches";
+import LaunchDetails from "./Containers/LaunchDetails"
 import "./App.css";
 
 const client = new ApolloClient({
@@ -23,6 +24,7 @@ const App=()=>{
                         <Route path='/' exact component={Home} />
                         <Route path='/PictureOfTheDay' component={PictureDay} />
                         <Route path='/SpaceXLaunches' component={SpaceXLaunches} />
+                        <Route path='/LaunchDetails/:id' component={LaunchDetails} />
                     </Switch>
                 </Layout>
             </HashRouter>
