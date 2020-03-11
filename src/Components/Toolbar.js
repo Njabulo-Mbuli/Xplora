@@ -8,7 +8,9 @@ class Toolbar extends React.Component {
     hamburgerClicked = () => {
         let hamburger = document.getElementById("hamburger");
         let mobileMenuItems = document.getElementById("mobileMenuItems");
+        let websiteTitle = document.getElementById("websiteTitle");
 
+        websiteTitle.classList.toggle("ToolbarChange")
         hamburger.classList.toggle("is-active");
         mobileMenuItems.classList.toggle("show");
     };
@@ -18,7 +20,7 @@ class Toolbar extends React.Component {
         return (
             <React.Fragment>
                 <div className='Toolbar'>
-                    <Link to='/' className='websiteTitle'>
+                    <Link to='/' className='websiteTitle' id="websiteTitle">
                         XPLORA
                     </Link>
                     <DesktopMenuItems/>

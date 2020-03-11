@@ -5,7 +5,9 @@ const MobileMenuItems = () =>{
     const hamburgerClicked = () => {
         let hamburger = document.getElementById("hamburger");
         let mobileMenuItems = document.getElementById("mobileMenuItems");
+        let websiteTitle = document.getElementById("websiteTitle");
 
+        websiteTitle.classList.toggle("ToolbarChange")
         hamburger.classList.toggle("is-active");
         mobileMenuItems.classList.toggle("show");
     };
@@ -30,7 +32,7 @@ const MobileMenuItems = () =>{
                         onClick={() => {
                             hamburgerClicked();
                         }}>
-                        Gallery
+                        Space-X Launches
                     </Link>
                     <Link
                         to='/PictureOfTheDay'

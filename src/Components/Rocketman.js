@@ -2,7 +2,7 @@ import React from 'react'
 import "./rocketman.css";
 
 const Rocketman = () => {
-    return <div class="rocketContainer">
+    return <div className="rocketContainer">
         <svg width="1136" height="815" viewBox="0 0 1136 815" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="undraw_Outer_space_drqu 1">
                 <g clip-path="url(#clip0)">

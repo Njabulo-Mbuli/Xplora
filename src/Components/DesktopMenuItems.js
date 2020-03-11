@@ -13,7 +13,7 @@ const DesktopMenuItems = () => {
             <Link
                 to='/Gallery'
                 className='desktopLink'>
-                Gallery
+                Space-X Launches
             </Link>
             <Link
                 to='/PictureOfTheDay'
