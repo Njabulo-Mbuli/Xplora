@@ -1,0 +1,85 @@
+.rocketContainer{
+    width:50%;
+}
+svg{
+    width: 100%;
+    height: auto;
+    animation: reveal 0.5s ease-in-out;
+}
+body{
+    text-align: center;
+}
+#thruster1,#thruster2,#thruster3,#thruster4{
+    animation: thrust 0.2s ease infinite;
+    transform-origin: top;
+    transform-box: fill-box;
+}
+#cluster{
+    animation: cluster 2.5s infinite linear;
+    transform-box:fill-box;
+}
+#firstStars{
+    transform: translateY(-100%);
+}
+#Rocket,#Thrusters{
+    animation: moveRocket 10s infinite linear;
+}
+#WholeRocket{
+    animation: revealRocket 2.5s ease-in-out 0.1s forwards;
+    transform: translateY(100%);
+}
+
+@keyframes revealRocket{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes reveal{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes moveRocket{
+    0%{
+        transform: translateY(0) translateX(0);
+    }
+    25%{
+        transform: translateY(2.5%) translateX(5%);
+    }
+    50%{
+        transform: translateY(5%) translateX(0);
+    }
+    75%{
+        transform: translateY(2.5%) translateX(-5%);
+    }
+    100%{
+        transform: translateY(0) translateX(0);
+    }
+}
+
+@keyframes cluster{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(56.85%);
+    }
+}
+
+@keyframes thrust{
+    0%{
+        transform: scaleY(1) scaleX(1);
+    }
+    50%{
+        transform: scaleY(1.15) scaleX(0.8);
+    }
+    100%{
+        transform: scaleY(1) scaleX(1);
+    }
+}

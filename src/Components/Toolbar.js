@@ -1,22 +1,27 @@
 import React from "react";
+import MobileMenuItems from './MobileMenuItems'
+import DesktopMenuItems from './DesktopMenuItems'
 import { withRouter, Link } from "react-router-dom";
 
 class Toolbar extends React.Component {
+   
     hamburgerClicked = () => {
         let hamburger = document.getElementById("hamburger");
-        let menuItems = document.getElementById("menuItems");
+        let mobileMenuItems = document.getElementById("mobileMenuItems");
 
         hamburger.classList.toggle("is-active");
-        menuItems.classList.toggle("show");
+        mobileMenuItems.classList.toggle("show");
     };
 
     render() {
+
         return (
             <React.Fragment>
                 <div className='Toolbar'>
                     <Link to='/' className='websiteTitle'>
                         XPLORA
                     </Link>
+                    <DesktopMenuItems/>
                     <div
                         className='hamburger hamburger--boring'
                         id='hamburger'
@@ -28,37 +33,7 @@ class Toolbar extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className='menuItems' id='menuItems'>
-                    <div
-                        className='menuSensor'
-                        onClick={() => {
-                            this.hamburgerClicked();
-                        }}></div>
-                    <Link
-                        to='/'
-                        className='navLink'
-                        onClick={() => {
-                            this.hamburgerClicked();
-                        }}>
-                        Home
-                    </Link>
-                    <Link
-                        to='/Gallery'
-                        className='navLink'
-                        onClick={() => {
-                            this.hamburgerClicked();
-                        }}>
-                        Gallery
-                    </Link>
-                    <Link
-                        to='/PictureOfTheDay'
-                        className='navLink'
-                        onClick={() => {
-                            this.hamburgerClicked();
-                        }}>
-                        Picture of the Day
-                    </Link>
-                </div>
+                <MobileMenuItems />
             </React.Fragment>
         );
     }

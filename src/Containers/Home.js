@@ -1,18 +1,20 @@
 import React from "react";
-import poster from "../assets/images/sunrise.jpg";
+import Rocketman from "../Components/Rocketman"
 
 class Home extends React.Component {
     goToNasaApi = () => {
         window.open("https://api.nasa.gov/api.html", "_blank");
     }
-
+//gradient for the design    
+//#667eea → #764ba2
     render() {
         return (
             <div className='Home'>
                 <div className='poster'>
-                    <img className='posterImage' src={poster} alt="Poster"/>
-                    <div className='overlay'></div>
-                    <h3 className='posterTagline'>Explore the universe...</h3>
+                    <div>
+                        hello world
+                    </div>
+                    <Rocketman/>
                 </div>
                 <section className='about'>
                     <p>

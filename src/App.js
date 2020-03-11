@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import Layout from "./Containers/Layout";
 import Home from "./Containers/Home";
 import PictureDay from "./Containers/PictureDay";
@@ -9,7 +9,7 @@ import "./App.css";
 class App extends React.Component {
     render() {
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <Layout>
                     <div className='buffer'>Buffer</div>
 
@@ -19,7 +19,7 @@ class App extends React.Component {
                         <Route path='/Gallery' component={Gallery} />
                     </Switch>
                 </Layout>
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 }
