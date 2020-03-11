@@ -281,11 +281,14 @@
 }
 .podPicture{
     width:100%;
+    max-width: 650px;
     height: 100%;
     object-fit: cover;
 }
 .podExplanation{
     width:90%;
+    max-width: 650px;
+    text-align: justify;
     margin:0.4em auto;
     text-justify: center;
 }
@@ -333,7 +336,7 @@
     width:80%;
     margin: 2em 0;
     padding-top: 0.5em;
-    background-color: #8195ee;
+    background-color: #9eadf1;
     box-shadow: 1em 1em #764ba2;
 }
 @media(min-width:920px){

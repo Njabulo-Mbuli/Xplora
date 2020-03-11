@@ -11,7 +11,7 @@ const DesktopMenuItems = () => {
                 Home
             </Link>
             <Link
-                to='/Gallery'
+                to='/SpaceXLaunches'
                 className='desktopLink'>
                 Space-X Launches
             </Link>

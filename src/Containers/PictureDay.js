@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from '../Components/Loading'
 
 class PictureDay extends React.Component {
     state = {
@@ -26,21 +27,21 @@ class PictureDay extends React.Component {
             });
     }
     render() {
-        return (
-            <div className="podBigContainer">
+        return (<>
+            {this.state.title ? <div className="podBigContainer">
                 <div className="podTitleSection">
                 <h1 className='podTitle'>{this.state.title}</h1>
                 <section className="podSubTitle">
-                    <h3>{this.state.copyright}</h3>
-                    <h3>{this.state.date}</h3>
+                    {this.state.copyright ? <h3>{this.state.copyright}</h3> : null}
+                    {this.state.date ? <h3>{this.state.date}</h3> : null}
                 </section>
                 </div>
-                <div className='podContainer'>
+                {this.state.hdurl ? <div className='podContainer'>
                     <img className='podPicture' src={`${this.state.hdurl}`} />
-                </div>
+                </div>:null}
                 <p className="podExplanation">{this.state.explanation}</p>
-            </div>
-        );
+            </div>:<Loading/>}
+        </>);
     }
 }
 

@@ -27,7 +27,7 @@ const MobileMenuItems = () =>{
                         Home
                     </Link>
                     <Link
-                        to='/Gallery'
+                        to='/SpaceXLaunches'
                         className='navLink'
                         onClick={() => {
                             hamburgerClicked();
