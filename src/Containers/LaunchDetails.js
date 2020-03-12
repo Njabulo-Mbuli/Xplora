@@ -23,6 +23,9 @@ const LaunchDetails = ({match}) =>{
               mission_id
               mission_name
               rocket {
+                rocket_name
+              }
+              rocket {
                 rocket {
                   active
                   mass {
@@ -67,7 +70,7 @@ const LaunchDetails = ({match}) =>{
                 if (loading) return <Loading />
                 if (error) return <Error error={error} />
                 return <>
-                    <h1>{data.launch.details}</h1>
+                    <p style={{textAlign:"justify"}}>{data.launch.details}</p>
                 </>
             }
         }

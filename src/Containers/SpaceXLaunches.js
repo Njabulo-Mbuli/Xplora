@@ -42,7 +42,7 @@ export default SpaceXLaunches;
 
 const LAUNCHES_QUERY = gql`
 {
-    launches {
+    launches(limit:"10"){
       links {
         article_link
         mission_patch_small
