@@ -323,6 +323,7 @@
     height:calc(105% - 3em);
     position: absolute;
     left: calc(50% - calc(50vw - 3em));
+    margin:auto;
     top:-51px;
 }
 .posterText{
