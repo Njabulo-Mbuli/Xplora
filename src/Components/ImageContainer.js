@@ -16,7 +16,8 @@ const useStyles = makeStyles({
         gridColumnGap: "1px",
         width: "100%",
         maxWidth: "800px",
-        boxSizing:"border-box"
+        boxSizing:"border-box",
+        margin:"auto"
     }
 })
 

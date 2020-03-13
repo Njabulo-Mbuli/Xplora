@@ -26,6 +26,7 @@ const useStyles = makeStyles({
     width: "100%",
     maxWidth:"800px",
     boxSizing:"border-box",
+    margin:"auto"
   },
   details:{
     width:"100%",
@@ -86,7 +87,7 @@ const LaunchDetails = ({ match }) => {
       ({ loading, error, data, refetch }) => {
         if (loading) return <Loading />
         if (error) return <Error error={error} />
-        console.log(data.launch.launch_success)
+        console.log(data.launch.links)
         const date = new Date(data.launch.launch_date_local)
         const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' })
         const [{ value: month }, , { value: day }, , { value: year }] = dtf.formatToParts(date)
