@@ -25,6 +25,16 @@ const useStyles = makeStyles({
     width: "100%",
     maxWidth:"800px",
     margin:"auto"
+  },
+  details:{
+    width:"100%",
+    textAlign: "justify",
+    maxWidth:"800px",
+    margin:"auto",
+    padding:"1em"
+  },
+  container:{
+    minHeight:"87vh"
   }
 })
 
@@ -80,7 +90,6 @@ const LaunchDetails = ({ match }) => {
                 site_name_long
               }
               launch_success
-              upcoming
             }
         }
     `
@@ -94,14 +103,18 @@ const LaunchDetails = ({ match }) => {
         const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' })
         const [{ value: month }, , { value: day }, , { value: year }] = dtf.formatToParts(date)
         
-        return <>
+        return <div className={classes.container}>
           <div>
             <div className={classes.topContainer}>
-              <img src={data.launch.links.mission_patch_small} />
+              { data.launch.links.mission_patch_small ? <img src={data.launch.links.mission_patch_small} /> : null}
               <div className={classes.info}>
                 <h1>{data.launch.mission_name}</h1>
                 <div className={classes.label}>
                   <p>Rocket Name: {data.launch.rocket.rocket_name}</p>
+                </div>
+                <hr/>
+                <div className={classes.label}>
+                  <p>Success Rate: {data.launch.rocket.rocket.success_rate_pct}%</p>
                 </div>
                 <hr/>
                 <div className={classes.label}>
@@ -127,11 +140,14 @@ const LaunchDetails = ({ match }) => {
                 <div className={classes.label}>
                   <p>Landing Legs Material: {data.launch.rocket.rocket.landing_legs.material}</p>
                 </div>
+                <div className={classes.label}>
+                  <p>Launch Status: {data.launch.rocket.rocket.launch_success}</p>
+                </div>
               </div>
             </div>
           </div>
-          <p style={{ textAlign: "justify" }}>{data.launch.details}</p>
-        </>
+          <p className={classes.details}>{data.launch.details}</p>
+        </div>
       }
     }
   </Query>
