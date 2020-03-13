@@ -15,6 +15,16 @@ const useStyles = makeStyles({
     margin:"auto",
     padding:"1em",
     boxSizing:"border-box"
+  },
+  topContainer:{
+    display:"grid",
+    alignItems: "center",
+    justifyItems: "center",
+    gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+    gridColumnGap:"1px",
+    width: "100%",
+    maxWidth:"800px",
+    margin:"auto"
   }
 })
 
@@ -86,7 +96,7 @@ const LaunchDetails = ({ match }) => {
         
         return <>
           <div>
-            <div>
+            <div className={classes.topContainer}>
               <img src={data.launch.links.mission_patch_small} />
               <div className={classes.info}>
                 <h1>{data.launch.mission_name}</h1>
