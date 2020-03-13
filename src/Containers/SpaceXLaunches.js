@@ -4,6 +4,22 @@ import { Query } from 'react-apollo'
 import Error from '../Components/Error'
 import Loading from '../Components/Loading'
 import ItemCard from '../Components/ItemCard'
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  launchesContainer:{
+    display:"grid",
+    alignItems: "center",
+    justifyItems: "center",
+    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+    gridColumnGap:"0.5em",
+    gridRowGap:"0.5em",
+    width: "100%",
+    maxWidth:"800px",
+    boxSizing:"border-box",
+    margin:"auto"
+  }
+})
 
 const GET_LAUNCHES = gql`
 {
@@ -19,77 +35,23 @@ const GET_LAUNCHES = gql`
   }
   `
 const SpaceXLaunches = () => {
+    const classes = useStyles()
     return (<Query query={GET_LAUNCHES}>
         {
             ({ loading, error, data, refetch }) => {
                 console.log(data)
                 if (loading) return <Loading />
                 if (error) return <Error error={error} />
-                return <>
+                return <div className={classes.launchesContainer}>
                     {
                         data.launches.map(launch=>{
                             return <ItemCard key={launch.id} launch={launch}/>
                         })
                     }
-                </>
+                </div>
             }
         }
     </Query>)
 }
 
 export default SpaceXLaunches;
-
-
-const LAUNCHES_QUERY = gql`
-{
-    launches(limit:"10"){
-      links {
-        article_link
-        mission_patch_small
-        reddit_campaign
-        reddit_launch
-        reddit_media
-        reddit_recovery
-        video_link
-        wikipedia
-        flickr_images
-      }
-      mission_id
-      mission_name
-      rocket {
-        rocket {
-          active
-          mass {
-            kg
-          }
-          name
-          payload_weights {
-            kg
-            id
-          }
-          success_rate_pct
-          company
-          boosters
-          height {
-            meters
-          }
-          landing_legs {
-            number
-            material
-          }
-        }
-        rocket_name
-        rocket_type
-      }
-      details
-      launch_date_local
-      launch_site {
-        site_id
-        site_name
-        site_name_long
-      }
-      launch_success
-      upcoming
-    }
-  }
-`
