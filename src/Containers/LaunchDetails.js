@@ -3,6 +3,7 @@ import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import Error from '../Components/Error'
 import Loading from '../Components/Loading'
+import ImageContainer from '../Components/ImageContainer'
 import {makeStyles} from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
@@ -24,14 +25,15 @@ const useStyles = makeStyles({
     gridColumnGap:"1px",
     width: "100%",
     maxWidth:"800px",
-    margin:"auto"
+    boxSizing:"border-box",
   },
   details:{
     width:"100%",
     textAlign: "justify",
     maxWidth:"800px",
     margin:"auto",
-    padding:"1em"
+    padding:"1em",
+    boxSizing:"border-box"
   },
   container:{
     minHeight:"87vh"
@@ -59,17 +61,8 @@ const LaunchDetails = ({ match }) => {
               mission_name
               rocket {
                 rocket {
-                  active
-                  mass {
-                    kg
-                  }
                   name
-                  payload_weights {
-                    kg
-                    id
-                  }
                   success_rate_pct
-                  company
                   boosters
                   height {
                     meters
@@ -84,11 +77,6 @@ const LaunchDetails = ({ match }) => {
               }
               details
               launch_date_local
-              launch_site {
-                site_id
-                site_name
-                site_name_long
-              }
               launch_success
             }
         }
@@ -98,7 +86,7 @@ const LaunchDetails = ({ match }) => {
       ({ loading, error, data, refetch }) => {
         if (loading) return <Loading />
         if (error) return <Error error={error} />
-        
+        console.log(data.launch.launch_success)
         const date = new Date(data.launch.launch_date_local)
         const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' })
         const [{ value: month }, , { value: day }, , { value: year }] = dtf.formatToParts(date)
@@ -140,13 +128,15 @@ const LaunchDetails = ({ match }) => {
                 <div className={classes.label}>
                   <p>Landing Legs Material: {data.launch.rocket.rocket.landing_legs.material}</p>
                 </div>
+                <hr/>
                 <div className={classes.label}>
-                  <p>Launch Status: {data.launch.rocket.rocket.launch_success}</p>
+                  <p>Launch Status: {data.launch.launch_success ? "Success" : "Failed"}</p>
                 </div>
               </div>
             </div>
           </div>
           <p className={classes.details}>{data.launch.details}</p>
+          {data.launch.links.flickr_images.length > 0 ? <ImageContainer flickr_images={data.launch.links.flickr_images}/> : null}
         </div>
       }
     }
